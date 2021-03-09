@@ -32,6 +32,8 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
         'modules/vampire5th-dice-roller/images/b_explosion.webp',
 		   ],
        colorset:"v5hw",
+       
+       
        system: "vampire5thB"
          });
        
