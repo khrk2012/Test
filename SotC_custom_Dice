@@ -1,0 +1,144 @@
+import {Vampire5thND} from './die.js';
+import {Vampire5thHD} from './die.js';
+import {Vampire5thBD} from './die.js';
+import {Vampire5thYD} from './die.js';
+
+
+Hooks.once("init", async function () {
+   CONFIG.Dice.terms["n"] = Vampire5thND;
+   CONFIG.Dice.terms["h"] = Vampire5thHD;
+   CONFIG.Dice.terms["y"] = Vampire5thYD;
+  CONFIG.Dice.terms["b"] = Vampire5thBD;
+});
+
+Hooks.once('diceSoNiceReady', (dice3d) => {
+    dice3d.addSystem({id:"vampire5thB",name:"Siege of the Citadel Dice"},"exclusive");
+  dice3d.addDicePreset({
+      type:"dn",
+      labels:[
+        'modules/vampire5th-dice-roller/images/b_explosion.webp', /*1*/
+        '', /*2*/
+        '', /*3*/
+        '',/*4*/
+        '', /*5*/
+        'modules/vampire5th-dice-roller/images/b_explosion.webp', /*6*/
+		 ],
+      bumpMaps:[
+        'modules/vampire5th-dice-roller/images/b_explosion.webp', 
+        '', 
+        '', 
+        '',
+        '', 
+        'modules/vampire5th-dice-roller/images/b_explosion.webp',
+		   ],
+       colorset:"v5hw",
+       system: "vampire5thB"
+         });
+       
+    dice3d.addDicePreset({
+      type:"dh",
+      labels:[
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        '', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        '',
+        '', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp',
+         ],
+      bumpMaps:[
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        '', 
+        '', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp',
+        '', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp',
+           ],
+      colorset:"v5hr",
+      system: "vampire5thB"
+    });
+
+    dice3d.addDicePreset({
+      type:"db",
+      labels:[
+        '', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp',
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        '',
+     ],
+      bumpMaps:[
+        '', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        'modules/vampire5th-dice-roller/images/w_explosion.webp',
+        'modules/vampire5th-dice-roller/images/w_explosion.webp', 
+        '',
+       ],
+       colorset:"v5hb",
+      system: "vampire5thB"
+    });
+
+    dice3d.addDicePreset({
+      type:"dy",
+      labels:[
+        'modules/vampire5th-dice-roller/images/no_ammo.webp', /*1*/
+        '', /*2*/
+        '', /*3*/
+        '',/*4*/
+        '', /*5*/
+        'modules/vampire5th-dice-roller/images/black_skull.webp', /*6*/
+		 ],
+      bumpMaps:[
+        'modules/vampire5th-dice-roller/images/no_ammo.webp', 
+        '', 
+        '', 
+        '',
+        '', 
+        'modules/vampire5th-dice-roller/images/black_skull.webp',
+		    ],
+		   colorset:"v5hy",
+       system: "vampire5thB"
+         });
+
+    dice3d.addColorset({
+        name:'v5hr',
+        description:'SotC Red Dice',
+        category:'SotC',
+        foreground:'#CDB800',
+        background:'#790914',
+        outline:'black',
+        edge:'#6F0000',
+        texture:'none'
+    },"no");
+    dice3d.addColorset({
+      name:'v5hw',
+      description:'SotC White Dice',
+      category:'SotC',
+      foreground:'black',
+      background:'white',
+      outline:'black',
+      edge:'white',
+      texture:'none'
+    },"no");
+    dice3d.addColorset({
+      name:'v5hb',
+      description:'SotC Black Dice',
+      category:'SotC',
+      foreground:'white',
+      background:'black',
+      outline:'white',
+      edge:'black',
+      texture:'none'
+   },"no");
+   dice3d.addColorset({
+     name:'v5hy',
+     description:'SotC Black Dice',
+     category:'SotC',
+     foreground:'white',
+     background:'yellow',
+     outline:'yellow',
+     edge:'yellow',
+     texture:'none'
+   },"no");
+});
